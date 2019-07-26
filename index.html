@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>taobao</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body div a {
+            margin-right: 10px;
+            color: #666;
+        }
+
+        #first {
+            color: #333;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .button {
+            background-color: yellow;
+            padding: 25px 48px;
+            margin: 25px 15px;
+        }
+
+        .loading_box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            text-align: center;
+            margin: 0 auto;
+            left: 0px;
+            right: 0px;
+        }
+
+        .loading_box p {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #f00;
+            position: absolute;
+            animation: move 1.5s linear infinite;
+        }
+
+        .loading_box :nth-of-type(1) {
+            left: 0;
+            top: 0;
+        }
+
+        .loading_box :nth-of-type(2) {
+            right: 0;
+            top: 0
+        }
+
+        .loading_box :nth-of-type(3) {
+            right: 0;
+            bottom: 0
+        }
+
+        .loading_box :nth-of-type(4) {
+            left: 0;
+            bottom: 0
+        }
+
+        .loading_box:nth-of-type(2) {
+            transform: rotate(45deg)
+        }
+
+        .loading_box:nth-of-type(1) p:nth-of-type(1) {
+            animation-delay: 0s
+        }
+
+        .loading_box:nth-of-type(2) p:nth-of-type(1) {
+            animation-delay: 0.2s
+        }
+
+        .loading_box:nth-of-type(1) p:nth-of-type(2) {
+            animation-delay: 0.4s
+        }
+
+        .loading_box:nth-of-type(2) p:nth-of-type(2) {
+            animation-delay: 0.6s
+        }
+
+        .loading_box:nth-of-type(1) p:nth-of-type(3) {
+            animation-delay: 0.8s
+        }
+
+        .loading_box:nth-of-type(2) p:nth-of-type(3) {
+            animation-delay: 1.0s
+        }
+
+        .loading_box:nth-of-type(1) p:nth-of-type(4) {
+            animation-delay: 1.2s
+        }
+
+        .loading_box:nth-of-type(2) p:nth-of-type(4) {
+            animation-delay: 1.4s
+        }
+
+        .show_pic {
+            width: 363px;
+            height: 255px;
+            margin: 30px auto;
+            text-align: center;
+            border: 2px red solid;;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .show_pic .show_pic_img {
+            width: 363px;
+            height: 255px;
+            transition: 0.5s linear;
+        }
+
+        .show_pic .bg {
+            opacity: 0;
+            background: black;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            transition: 0.5s linear;
+        }
+
+        .show_pic .show_pic_title {
+            width: 100%;
+            height: 25px;
+            color: white;
+            position: absolute;
+            left: 0;
+            top: -30px;
+            transition: 0.5s linear;
+        }
+
+        .show_pic:hover .show_pic_img {
+        transform: scale(1.3)
+        }
+
+        .show_pic:hover .show_pic_title {
+            top: 30px;
+        }
+
+        .show_pic:hover .bg {
+            opacity: 0.7;
+        }
+
+        @keyframes move {
+            0% {
+                transform: scale(0, 0);
+            }
+            50% {
+                transform: scale(1, 1);
+            }
+            100% {
+                transform: scale(0, 0);
+            }
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var start = document.getElementById("start");
+            var end = document.getElementById("end");
+            var time = document.getElementById("time");
+            var timer = null;
+//            time.innerText
+            var count = 1;
+            start.onclick = function () {
+                timer = setInterval(function () {
+                    time.innerText = "00:00:" + count++;
+                }, 1000);
+            }
+            end.onclick = function () {
+                clearInterval(timer);
+                time.innerText = "00:00:00";
+            }
+
+
+        }
+    </script>
+</head>
+<body>
+<p style="color:#333333;font-size:22px">daedaefaefa</p>
+<p style="color:#333333;font-size:12px;display: flex;align-items: center;justify-content: space-between">
+    <a>time</a>
+    <a style="display:flex;align-items:center"><img src="img/mos_main_brand_read_icon.png"/><span
+            style="margin-left: 4px">123</span></a>
+</p>
+
+<div style="width: 100%;height: 40px;line-height:40px;background-color: #CCCCCC;margin: 0 ;overflow: auto">
+    <p style="width: 70%;margin: 0 auto;">
+        <a class="left" id="first">中国大陆</a>
+        <a class="left" style="color: red">亲，请登录</a>
+        <a class="left"> 免费注册</a>
+        <a class="left">手机逛淘宝</a>
+
+        <a class="right">网站导航</a>
+        <a class="right" style="color: red">联系客服</a>
+        <a class="right"> 千牛卖家中心</a>
+        <a class="right">商品分类</a>
+        <a class="right">收藏夹</a>
+        <a class="right">购物车</a>
+        <a class="right">我的淘宝</a>
+    </p>
+
+</div>
+<!--<span style="height:20px;color: #000 ;font-size:14px;">-->
+<div style="width:500px;height:350px;overflow: auto;text-align: center;background: #ccc;margin: auto;margin-top: 50px">
+    <p style="width:100%;margin: 0 auto;margin-top:40px;"><span id="time"
+                                                                style="color: #000 ;font-size: 25px;">00:00:00</span>
+    </p>
+    <p><input class="button" id="start" type="button" value="开始"/></p>
+    <p><input class="button" id="end" type="button" value="结束"/></p>
+</div>
+<div id="ls1_loading" style="width: 300px;height: 300px;background: #ccc;margin: 30px auto;text-align: center; display: flex;
+            align-items: center;">
+    <div class="loading_box">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="loading_box">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+</div>
+
+<div class="show_pic">
+    <img class="show_pic_img" src="img/bussines.png"/>
+    <p class="bg"></p>
+    <p class="show_pic_title">标题</p>
+
+</div>
+
+
+</body>
+</html>
